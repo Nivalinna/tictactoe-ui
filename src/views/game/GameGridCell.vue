@@ -3,13 +3,16 @@
 </template>
 <style scoped>
     .cell {
-        display:flex;
+        display:inline-flex;
         flex-direction: column;
         border: 6px solid #2c3e50;
         width: 33.333%;
         height: 90px;
         font-size: 3.5em;
         font-family: 'Gochi Hand', sans-serif;
+        text-align: center;
+        justify-content: center
+        
     }
     .cell:hover {
         background-color: #7f8c8d;
@@ -37,7 +40,7 @@ export default {
 
     methods: {
         markCell() {
-            if (this.$parent.gameLocked) {
+            if (this.$parent.gameLocked || this.mark.length > 0) {
                 return
             }
             this.mark = this.$parent.currentMark

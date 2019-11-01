@@ -2,7 +2,7 @@
     <div class="game-container">
         <game-score-board v-model="score" />
         <game-grid ref="gameGrid" @winner="updateScore" />
-        <button @click="playAgain">Play again</button>
+        <button class="button" @click="playAgain">Play again</button>
     </div>
 </template>
 <style scoped>
@@ -11,6 +11,19 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
+    
+    }
+    .button {
+        background-color: #555555; 
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        align-items: center;
+        justify-content: center;
     }
 </style>
 <script>
@@ -35,7 +48,10 @@ export default {
 
     methods: {
         updateScore(winner) {
-            this.score[winner] = this.score[winner] + '1'
+            this.score[winner] = this.score[winner] + 1
+            alert('fag')
+            window.variable = ('yeet'),
+            window.variable.push['x']
         },
 
         playAgain() {
